@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>uStepper GUI</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="assets/css/framework.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/fonticons.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+<body>
+	<header>
+		<div class="container position-relative d-flex justify-content-between">
+			<div id="slogan" class="d-flex">
+				<img id="logo" src="assets/logo.png">
+				<h1><b style="font-family:cooper black;">uStepper</b> GUI</h1>
+			</div>	
+
+			
+				<div id="comm-status" class="d-flex">
+					<div class="icon">
+						<i class="icon-wifi"></i>
+					</div>
+
+					<span>Connecting</span>
+				
+					<div id="loader" class="loader ml-2"></div>
+				</div>
+			
+		</div>
+	</header>
+
+	<div class="container">
+		<div class="row">
+
+			<div class="col-lg-7">
+				<div class="card mb-3">
+					<div class="card-header">
+						<b>Controls</b>
+					</div>
+					<div class="card-body">
+						<div class="row no-gutters">
+							<div class="col-sm-6 col-md-3 pr-sm-3">
+								<button class="btn btn-lg btn-danger btn-block mb-md-0 mb-2" id="emergencyBtn"><i class="icon-off"></i>Stop</button>
+							</div>
+
+							<div class="col-sm-6 col-md-3 pr-md-3">
+								<button class="btn btn-lg btn-secondary btn-block mb-md-0 mb-2" id="homeBtn"><i class="icon-home"></i>Home</button>
+							</div>	
+
+							<div class="col-md-6">
+								<div class="input-group  input-group">
+									<div class="input-group-prepend">
+										<button class="btn btn-secondary" type="button" id="moveCCWBtn"><i class="icon-minus"></i></button>
+									</div>
+									<div id="moveInputWrapper" class="input-unit unit-degree">
+										<input type="number" class="form-control" id="moveInput" value="45">
+									</div>
+									<div class="input-group-append">
+										<button class="btn btn-secondary" type="button" id="moveCWBtn"><i class="icon-plus"></i></button>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="row mt-3">
+							<div class="col-sm-12">
+								<div class="d-flex justify-content-center">
+									<div class="joystick-wrapper" id="joystick">
+										<span class="axis-label axis-x axis-max">+</span>
+										<span class="axis-label axis-x axis-min">-</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="card mb-3">
+					<div class="card-header">
+						<b>Telemetry</b>
+					</div>
+					<div class="card-body">
+						
+
+						<table class="table table-sm">
+								
+							<tr>
+								<th></th>
+								<th><span class="title">Encoder</span></th>
+								<th><span class="title">Driver</span></th>
+							</tr>
+
+							<tr>
+								<td>
+									Position
+								</td>
+								<td>
+									<div class="input-group input-group-sm">
+										<div class="input-group-prepend">
+											<span class="input-group-text"><div id="anglePointer"><i class="icon-up"></i></div></span>
+										</div>		
+										<input type="text" id="dataPosition" class="form-control text-right" disabled value="0.00">
+										<div class="input-group-append">
+											<span class="input-group-text positionUnit">&#176;</span>
+										</div>	
+									</div>
+								</td>
+								<td>
+									<div class="input-group input-group-sm">
+										<input type="text" id="dataPositionDriver" class="form-control text-right" disabled value="0.00">
+										<div class="input-group-append">
+											<span class="input-group-text positionUnit">&#176;</span>
+										</div>
+									</div>
+								</td>
+							</tr>
+
+							<tr>
+								<td>
+									Abs
+								</td>
+								<td>
+									<div class="input-group input-group-sm">
+										<input type="text" id="dataAbsPosition" class="form-control text-right" disabled value="0.00">
+										<div class="input-group-append">
+											<span class="input-group-text positionUnit">&#176;</span>
+										</div>
+									</div>
+								</td>
+								<td>
+									<div class="input-group input-group-sm">
+										<input type="text" id="dataAbsPositionDriver" class="form-control text-right" disabled value="0.00">
+										<div class="input-group-append">
+											<span class="input-group-text positionUnit">&#176;</span>
+										</div>
+									</div>
+								</td>
+							</tr>
+
+							<tr>
+								<td>Velocity</td>
+								<td>
+									<div class="input-group input-group-sm">
+										<input type="text" id="dataVelocity" class="form-control text-right" disabled value="0.00">
+										<div class="input-group-append">
+											<span class="input-group-text velocityUnit">rpm</span>
+										</div>
+									</div>
+								</td>
+								<td>
+									<div class="input-group input-group-sm">
+										<input type="text" id="dataVelocityDriver" class="form-control text-right" disabled value="0.00">
+										<div class="input-group-append">
+											<span class="input-group-text velocityUnit">rpm</span>
+										</div>
+									</div>
+								</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+
+				<div class="card mb-3">
+					<div class="card-header">
+						<b>Teach mode control</b>
+					</div>
+
+					<div class="card-body">
+						<div class="row">
+							<div class="col-sm-7 order-1 mb-sm-0 mb-2 d-sm-block d-flex justify-content-center">
+								<button class="btn btn-icon btn-secondary mr-1" id="record"><i class="icon-circle"></i></button>
+								<button class="btn btn-icon btn-secondary mr-1" id="play"><i class="icon-play"></i></button>
+								<button class="btn btn-icon btn-secondary mr-1" id="stop"><i class="icon-stop"></i></button>
+							</div>
+
+							<div class="col-sm-5 order-last order-sm-3">
+								<form action="/upload" method="post" id="uploadForm" enctype="multipart/form-data">
+									<button id="uploadBtn" class="btn btn-secondary btn-sm btn-block mb-2">
+										<i class="icon-folder-open"></i> Upload job
+									</button>
+									<input type="file" id="uploadFile" name="jobfile" accept=".txt" hidden="true">
+								</form>
+
+								<a class="btn btn-light btn-sm btn-block" href="/recording.txt" download><i class="icon-floppy"></i> Save job</a>
+							</div>
+
+							<div class="col-sm-12 order-2 order-sm-last mt-2 mb-2 mb-sm-0">
+								<div id="recording">
+									<h5>Recording <span id="record-len">(0)</span></h5>
+									<button id="recordLine" class="d-none btn btn-sm btn-light">Add position</button>
+
+									<div id="lines">
+										<span class='line'>No positions recorded</span>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						
+					</div>
+				</div>
+				
+			</div>
+
+			<div class="col-lg-5">	
+
+				<div class="card mb-3">
+					<div class="card-header">
+						<b>Settings</b>
+					</div>
+					
+					<div class="card-body">
+
+
+						<table class="table table-sm">
+
+							<thead>
+								<tr>
+									<th colspan="2"><span class="title">GUI</span></th>
+								</tr>
+							</thead>
+
+							<tbody>
+								<tr>
+									<td>Position unit:</td>
+									<td>
+										<div class="input-group input-group-sm">
+											<select id="posunit" class="custom-select">
+												<option value="degree" selected>Degrees</option>
+												<option value="step">Step</option>
+											</select>
+										</div>
+									</td>
+								</tr>
+
+								<tr>
+									<td>Velocity unit:</td>
+									<td>
+										<div class="input-group input-group-sm">
+											<select id="velunit" class="custom-select">
+												<option value="rpm" selected>rpm</option>
+												<option value="step">Step/s</option>
+											</select>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+
+							<thead>
+								<tr>
+									<th colspan="2"><span class="title">Stepper</span></th>
+								</tr>
+							</thead>
+
+							<tbody>
+								<tr>
+									<td>Velocity</td>
+									<td>
+										<div class="input-group input-group-sm">
+											<input type="number" class="form-control" id="velocityInput" title="The maximum motor velocity">
+											<div class="input-group-append">
+												<span class="input-group-text velocityUnit">rpm</span>
+											</div>
+										</div>
+									</td>
+								</tr>
+
+								<tr>
+									<td>Acceleration:</td>
+									<td>
+										<div class="input-group input-group-sm">
+											<input type="number" class="form-control" id="accelerationInput" title="The maximum motor accelation">
+											<div class="input-group-append">
+												<span class="input-group-text accelationUnit">rpm/s</span>
+											</div>
+										</div>
+									</td>
+								</tr>
+								
+								<tr>
+									<td>Brake method:</td>
+									<td>
+										<div class="input-group input-group-sm">
+											<select id="brake" class="custom-select">
+												<option value="free">Freewheel</option>
+												<option value="cool" selected=>Cool brake</option>
+												<option value="hard">Hard brake</option>
+											</select>
+										</div>
+									</td>
+								</tr>
+								
+								<tr>
+									<td>Closed loop:</td>
+									<td>
+										<label class="switch">
+											<input type="checkbox" id="closedLoopCheck">
+											<span class="slider round"></span>
+										</label>
+									</td>
+								</tr>
+
+								
+							</tbody>
+
+							<thead>
+								<tr>
+									<th colspan="2"><span class="title">Homing</span></th>
+								</tr>
+							</thead>
+
+							<tbody>
+
+								<tr>
+									<td>Homing velocity:</td>
+									<td>
+										<div class="input-group input-group-sm">
+											<input type="number" class="form-control" id="homeVelInput" title="Velocity of motor while homing. If changed the sensitivity has to be tuned.">
+											<div class="input-group-append">
+												<span class="input-group-text velocityUnit">rpm</span>
+											</div>
+										</div>
+									</td>
+								</tr>
+
+								<tr>
+									<td>Sensitivity:</td>
+									<td>
+										<div class="input-group input-group-sm">
+											<input type="number" class="form-control" id="homeThrsInput" title="Stall sensitivity is a value between -63 and +64">
+											<div class="input-group-append">
+												<span class="input-group-text accelationUnit">-63 to 64</span>
+											</div>
+										</div>
+									</td>
+								</tr>
+
+								<tr>
+									<td>Direction:</td>
+									<td>
+										<div class="input-group input-group-sm">
+											<select class="custom-select" title="Homing direction" id="homeDirSelect">
+												<option value="1">Clockwise (CW)</option>
+												<option value="0">Counter Clockwise (CCW)</option>
+											</select>
+										</div>
+									</td>
+								</tr>
+
+								
+							</tbody>
+								
+						</table>
+
+					</div>
+				</div>
+				
+		
+				<div class="card mb-3">
+					<div class="card-header">
+						<b>Log</b>
+					</div>
+					<div class="">
+						<textarea id="log" class="form-control" rows="5"></textarea>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="assets/js/script.js"></script>
+</body>
+</html>

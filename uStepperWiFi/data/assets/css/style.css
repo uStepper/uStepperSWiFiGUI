@@ -1,0 +1,525 @@
+html, * {
+    line-height: 1.5;
+}
+
+body{
+	background-color: #2a2c30;
+    color: #aaaaaa;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+hr {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+header{
+	background-color: #232528;
+	color: #ffffff;
+	padding: 20px 0;
+	margin-bottom: 30px;
+}
+
+header h1{
+	font-size: 20px;
+  margin-top: 5px;
+  margin-bottom: 0px;
+}
+
+#slogan{
+  height: 40px;
+}
+
+#logo{
+    height: 36px;
+    width: auto;
+    margin: 0px 15px 0 15px
+}
+
+@media (min-width: 992px){
+  #logo{
+      height: 56px;
+      margin: -10px 15px 0 15px
+  }
+
+  header h1{
+      margin: 0px;
+      padding: 0px;
+      font-weight: normal;
+      font-size: 25px;
+  }
+}
+
+header #comm-status{
+    padding: 8px 16px;
+    background-color: #393939;
+    border-radius: 3rem;
+    margin-left: 15px;
+    font-size: 16px;
+    height: 40px;
+    font-weight: bold;
+}
+
+header #comm-status .icon{
+    padding: 8px 10px 8px 0;
+    border-right: 1px solid #333;
+    margin: -8px 10px -8px 0;
+}
+
+label{
+    display: inline-block;
+    margin-bottom: .5rem;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.form-check {
+    padding-left: 1.5rem;
+}
+
+.btn-secondary {
+    color: #fff;
+    background-color: #33353c;
+    border-color: #3b3e44;
+}
+
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 56px;
+    height: 22px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #1e1f22;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border: 1px solid #2f3135;
+    box-shadow: none;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #007bff;
+    border: 1px solid #007bff;
+}
+
+input:focus + .slider {
+  box-shadow: none;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(34px);
+  -ms-transform: translateX(34px);
+  transform: translateX(34px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.custom-select{
+    color: #a6c5ff;
+    background: #1e1f22;
+    border-color: #2f3135;
+}
+
+
+
+
+.input-group-lg>.custom-select, .input-group-sm>.custom-select {
+    padding-right: 0rem;
+}
+
+#recording{
+    border-top: 1px solid #3b3e44;
+    padding: 5px 0;
+    position: relative;
+}
+
+#recordLine{
+    position: absolute;
+    right: 0px;
+    top: 4px;
+}
+
+#recording span.linenum{
+    display: block;
+    float: left;
+    margin: 4px 7px 0px 0;
+    text-align: center;
+    width: 26px;
+    height: 26px;
+    color: #768698;
+}
+
+#recording span.linenum.active{
+    border: 1px solid rgb(255 255 255 / 10%);
+    border-radius: 100%;
+    color: #fff;
+    background: #1e1f22;
+}
+
+#recording span.line{
+    display:block;
+    padding: 4px 8px;
+    color: #fff;
+    border-top:1px solid #2a2c30;
+}
+
+.control{
+	height: 80px;
+    width: 80px;
+    position: relative;
+    border-color: #eaeaea;
+    margin: 5px;
+}
+
+.control span.icon{
+	font-size: 24px;
+}
+
+.controls{
+	margin: 0 auto;
+}
+
+.controls div{
+	-webkit-transition : all 200ms ease-in-out;;
+	-moz-transition : all 200ms ease-in-out;;
+	-o-transition : all 200ms ease-in-out;;
+	transition : all 200ms ease-in-out;;
+	padding: 5px;
+}
+
+.controls .z{
+	color: #05a3ff !important;
+}
+
+.controls .y{
+	color: #13ad13 !important;
+}
+
+.controls .x{
+	color: #ec2020 !important;
+}
+
+.controls div.b-center {
+	color: transparent;
+}
+
+.controls div.b-center span{
+    font-size: 28px;
+    text-align: center;
+    display: block;
+    padding: 22px 0;
+}
+
+
+#log{
+	color: #fff;
+    background: #25292e;
+    border-radius: 0px 0px 5px 5px;
+    border: none;
+}
+
+/* Joystick */
+
+.joystick-wrapper{
+	position: relative;
+	border-radius: 10px;
+	background: #2a2c30;
+}
+
+
+.axis-label{
+    position: absolute;
+}
+
+.axis-label.axis-x{
+    color: #c74249;
+}
+
+.axis-label.axis-y{
+    color: #3ea047;
+}
+
+.axis-label.axis-z{
+    color: #2b6e88;
+}
+
+.axis-label.axis-x{
+    top: 0px;
+    bottom: 0px;
+    margin-bottom: auto;
+    margin-top: auto;
+    height: 26px; /* Need a specific value to work */
+    background: #2a2c30;
+    padding: 0 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: center;
+}
+
+.axis-x.axis-min{left: 0px;}
+.axis-x.axis-max{right: 0px;}
+
+.range-labels{
+    position: relative;
+    padding: 0 26px;
+}
+
+.range-labels .label-min{
+    position: absolute;
+    top: 0px;
+    padding: 3px 0;
+    left: 0px;
+}
+
+.range-labels .label-max{
+    position: absolute;
+    top: 0px;
+    padding: 3px 0;
+    right: 0px;
+}
+
+#joystick{
+    width: 100%;
+    height: 220px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#joystick:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    border-top: 2px solid rgba(255, 40, 40, 0.3);
+    border-bottom: 2px solid rgba(255, 40, 40, 0.3);
+    width: 100%;
+    transform: translateY(-50%);
+}
+
+
+.joystick {
+    background-color: #222427;
+    border-radius: 100%;
+    border: 10px solid #1b1b1b;
+    user-select: none;
+    cursor: pointer;
+    width: 80px;
+    height: 80px;
+    touch-action: none;
+    position: relative;
+    margin: 0 auto;
+    z-index: 1;
+    box-shadow: inset 0px 0px 20px 5px rgba(0, 0, 0, 0.7);
+}
+
+.title{
+    color: #e47272;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.form-control, .custom-select {
+    color: #ffeaea;
+}
+
+.card{
+    background-color: #232528;
+}
+
+.card-header{
+  color: #fff;
+}
+
+.card-body .table{
+	margin-bottom: 0px;
+}
+
+.card-body .table td, .card-body  .table th {
+    border-top: none;
+}
+
+.card-body .table thead th {
+    border-bottom: 1px solid #1e1f22;
+}
+
+.card-body .table tr td:first-child, .card-body .table tr th:first-child {
+    padding-left: 0px;
+}
+
+.card-body .table tr td:last-child, .card-body .table tr th:last-child {
+    padding-right: 0px;
+}
+
+.card-body .table thead tr th{
+    padding-bottom: 10px;
+}
+
+.card-body .table tbody tr:first-child td{
+    padding-top: 10px;
+}
+
+.btn-icon{
+	font-size:32px;
+	padding: 12px;
+	background: #2a2c30;
+	border-color: #2a2c30;
+}
+
+input[type=range].input-range {
+  -webkit-appearance: none;
+  width: 100%;
+  margin: 0px 0;
+  background-color: transparent;
+}
+
+input[type=range].input-range:focus {
+  outline: none;
+}
+
+input[type=range].input-range::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 28px;
+  cursor: pointer;
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0), 0px 0px 0px rgba(13, 13, 13, 0);
+  background: #2a2c30;
+ 
+  border-radius: 25px;
+  border: 0px solid #000000;
+}
+
+input[type=range].input-range::-webkit-slider-thumb {
+  height: 44px;
+  width: 44px;
+  border-radius: 50px;
+  background: rgb(26, 26, 27);
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -8px;
+  border: 6px solid #1b1b1b;
+  box-shadow: inset 0px 0px 10px 5px rgba(0, 0, 0, 0.43);
+}
+
+input[type=range].input-range:focus::-webkit-slider-runnable-track {
+  background: #34363c;
+}
+
+.input-group-text {
+    color: #808992;
+}
+
+/* prepare wrapper element */
+.input-unit {
+    display: inline-block;
+    position: relative;
+}
+
+/* position the unit to the right of the wrapper */
+.input-unit::after {
+  position: absolute;
+  top: 30%;
+  right: .8em;
+  font-size: 14px;
+  transition: all .1s ease-in-out;
+  pointer-events: none;
+}
+
+/* move unit more to the left on hover or focus within
+   for arrow buttons will appear to the right of number inputs */
+.input-unit:hover::after,
+.input-unit:focus-within::after {
+  right: 2.2em;
+}
+
+/* handle Firefox (arrows always shown) */
+@supports (-moz-appearance:none) {
+  div.form-control.unit::after {
+    right: 1.5em;
+  }
+}
+
+.unit-degree::after {
+  content: 'Degrees';
+}
+.unit-step::after {
+  content: 'Steps';
+}
+
+.input-group>.input-unit{
+    position: relative;
+    flex: 1 1 0%;
+}
+
+.input-group>.input-unit>.form-control{
+    position: relative;
+    flex: 1 1 0%;
+    min-width: 0;
+    margin-bottom: 0;
+    height: calc(1.5em + 1rem + 2px);
+    padding: .5rem .5rem .5rem .8rem;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    border-radius: 0px;
+}
+
+.loader {
+    border: 4px solid #2f3135;
+    border-top: 4px solid #007bff;
+    border-radius: 50%;
+    width: 26px;
+    height: 26px;
+    animation: spin 0.8s linear infinite;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.card-header .loader{
+  position: absolute;
+  top: 12px;
+  right: 15px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
