@@ -1,5 +1,5 @@
 #include <uStepperS.h>
-#include "uStepperWiFi/gcode.cpp"
+#include "uStepperWiFi/gcode.h"
 #include "uStepperWifi/constants.h"
 
 #define UARTPORT Serial1
