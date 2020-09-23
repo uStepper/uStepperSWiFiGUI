@@ -42,7 +42,7 @@ const STEPPER_UNIT_RPM = 0;
 const STEPPER_UNIT_STEP = 1;
 
 
-const wsInterval = 100; 				// Min interval in ms between each command (not guaranteed)
+const wsInterval = 50; 				// Min interval in ms between each command (not guaranteed)
 const fileUploadURL = "/upload"; 	// Address to upload
 
 
