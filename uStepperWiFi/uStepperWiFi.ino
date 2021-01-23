@@ -7,9 +7,11 @@
 #include "constants.h"
 
 #define UARTPORT Serial
+#define WEB_SERVER_PORT 80
+#define WEB_SOCKETS_PORT 81
 
-ESP8266WebServer server(80);
-WebSocketsServer websocket = WebSocketsServer(81);
+ESP8266WebServer server(WEB_SERVER_PORT);
+WebSocketsServer websocket = WebSocketsServer(WEB_SOCKETS_PORT);
 
 GCode comm;
 GCode webcomm;
@@ -61,7 +63,7 @@ void setup() {
   // Setup
   pinMode(statusLed, OUTPUT);
   initSPIFFS();
-  webota.init(&server, "/webota");
+  webota.init(WEB_SERVER_PORT, "/webota");
   initWiFi();
   initWebsocket();
   initWebserver();
